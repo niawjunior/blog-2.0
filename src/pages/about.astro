@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro"
+import AboutUs from "../components/AboutUs.astro"
+
+import { getCollection, getEntry } from "astro:content"
+
+const allAboutPosts = await getCollection("about")
+const team = await getEntry("about", "team")
+
+console.log(team)
+---
+
+<Layout title="About">
+  <AboutUs data={team.data} body={team.body} />
+</Layout>
+
+<style></style>

@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro"
+// import { getCollection, getEntry } from "astro:content"
+
+export function getStaticPaths() {
+  return [{ params: { blog: "javascript-array-sort" } }]
+}
+const { blog } = Astro.params
+// const team = await getEntry("blog")
+// const allBlogPosts = await getCollection("")
+---
+
+<Layout title="Welcome to Blog 2.0">
+  {blog}
+  <!-- <div class="flex gap-4 container justify-center mx-auto">
+    {
+      allBlogPosts?.map((item) => {
+        // return <Card body={item.body} data={item.data} />
+      })
+    }
+  </div> -->
+</Layout>
+
+<style></style>
